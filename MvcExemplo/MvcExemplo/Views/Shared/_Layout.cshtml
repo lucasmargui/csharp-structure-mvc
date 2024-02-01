@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - MvcExemplo</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+	<header class="header">
+		<h1 class="logo"><a href="#">Flexbox</a></h1>
+		<ul class="main-nav">
+			<li><a class="nav-link active" asp-area="" asp-controller="Usuario" asp-action="Index"> <i class="fas fa-tachometer-alt"></i>Lista Usuario</a></li>
+			<li><a href="#">Sobre</a></li>
+			<li><a href="#">Contato</a></li>
+		</ul>
+	</header>
+
+	<div class="container">
+		<main role="main" class="pb-3">
+
+			<br>
+			<br>
+
+
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container">
+			&copy; 2024 - MvcExemplo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@RenderSection("Scripts", required: false)
+</body>
+</html>

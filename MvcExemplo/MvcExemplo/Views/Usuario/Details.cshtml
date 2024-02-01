@@ -1,0 +1,53 @@
+﻿@model MvcExemplo.Models.UsuarioModel
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Id)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Id)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.nome)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.nome)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.sobrenome)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.sobrenome)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.endereco)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.endereco)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.email)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.email)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.nascimento)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.nascimento)
+		</dd>
+	</dl>
+</div>
+<div>
+	@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+	<a asp-action="Index">Back to List</a>
+</div>

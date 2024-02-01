@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MvcExemplo.Models.UsuarioModel>
+
+@{
+	ViewData["Title"] = "Index";
+}
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+
+<h1>Lista</h1>
+<p>
+	<a asp-action="Create" class="original-button">Criar Usuário</a>
+</p>
+<table class="table" id="table_id">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Id)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.nome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.sobrenome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.endereco)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.nascimento)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.nome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.sobrenome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.endereco)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.nascimento)
+				</td>
+				<td>
+					@Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+					@Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+					@Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@section Scripts{
+	<!-- JS -->
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#table_id').DataTable();
+		});
+	</script>
+}
